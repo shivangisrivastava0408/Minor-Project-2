@@ -358,7 +358,7 @@ h2{
 }
 
 .b {
-  background-image: url("{% static 'images/b.jpg' %}");
+  background-image: url("{% static 'images/baseball_img.jpg' %}");
 }
 
 .c {
@@ -645,7 +645,7 @@ document.addEventListener("keypress", function(event) {
 
 var threshold=30;
 function setThreshold() {
-  threshold = prompt("Please enter a threshold value", 30);
+  threshold = prompt("Please enter a threshold value",30);
   /*if (threshold) {
     document.getElementById("demo").innerHTML =
     "Hello " + person + "! How are you today?";
@@ -708,10 +708,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
-
+        var b = new Audio("{% static 'sounds/Baseball.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -720,13 +722,13 @@ function makeSound(key) {
 
     case "b":
       output.innerHTML=" ";
-      var b = new Audio("{% static 'sounds/b.mp3' %}");
+      var b = new Audio("{% static 'sounds/Baseball.mp3' %}");
       if(!transcript)
         b.play();
       var dist,a1,a2;
       if(transcript.length>1){
-        dist=levenshteinDistance("ball",transcript.toLowerCase());
-        a1="ball".length;
+        dist=levenshteinDistance("baseball",transcript.toLowerCase());
+        a1="baseball".length;
         a2=transcript.length;
       }
       else if(transcript.length==1){
@@ -737,9 +739,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/c.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+ "<br> Try again!!!";
@@ -765,9 +770,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/d.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -793,9 +801,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/e.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -821,9 +832,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/f.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -849,9 +863,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/g.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -877,9 +894,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/h.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -905,9 +925,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/i.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -933,9 +956,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/j.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -961,9 +987,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/k.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -989,9 +1018,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/l.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -1017,9 +1049,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/m.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -1045,9 +1080,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/n.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -1073,9 +1111,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/o.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -1101,9 +1142,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/p.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -1129,9 +1173,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/q.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -1157,9 +1204,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/r.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -1185,9 +1235,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/s.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -1213,9 +1266,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/t.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -1241,9 +1297,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/u.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -1269,9 +1328,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/v.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -1297,9 +1359,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/w.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -1325,9 +1390,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/x.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -1353,9 +1421,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/y.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -1381,9 +1452,12 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
         plusSlides(0.5);
+        var b = new Audio("{% static 'sounds/z.mp3' %}");
+        b.play();
+        setTimeout(runSpeechRecognition, 4000);
       }
       else{
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+"<br> Try again!!!";
@@ -1409,7 +1483,7 @@ function makeSound(key) {
       if(!transcript){
         output.innerHTML="The accuracy is ____";
       }
-      else if((a1+a2-dist)/(a1+a2)*100>threshold){
+      else if((a1+a2-dist)/(a1+a2)*100>=threshold){
         output.innerHTML="The accuracy is "+(a1+a2-dist)/(a1+a2)*100+"%"+" <br>Great Job!!!";
       }
       else{
